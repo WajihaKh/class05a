@@ -51,12 +51,33 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
 
+function sumAndMultiply(a, b, c) { //eslint-disable-line
+//   function sum(a, b, c) {
+//     console.log('');
+//   }
+//   sum();
+//   function multiply(a, b, c) {
+//     console.log();
+//   }
+//   multiply();
+  let firstSum = sum(a, b);
+  let finalSum = sum(firstSum[0], c);
+  console.log('final sum', finalSum);
+  let sumString = [finalSum[0],`${a} and ${b} and ${c} sum to ${finalSum[0]}.`];
+
+  let firstProduct = multiply(a, b);
+  let finalProduct = multiply(firstProduct[0], c);
+  console.log('final multiply', finalProduct);
+  let productString = [finalProduct[0],`The product of ${a} and ${b} and ${c} is ${finalProduct[0]}.`];
+
+  let sumAndProduct = [sumString[0], productString[0], sumString[1], productString[1]];
+  return sumAndProduct;
 }
 
+sumAndMultiply(4,7,5);
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
